@@ -1,0 +1,78 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#FFBD00",
+          "style": "plain",
+          "template": "🐈",
+          "type": "session",
+          "background": "#3d3d3d"
+        },
+
+        {
+          "foreground": "#8a8a8a",
+          "background": "#3d3d3d",
+          "style": "plain",
+          "properties": {
+            "style": "folder"
+          },
+          "template": " /{{ .Path }} ",
+          "type": "path"
+        },
+
+        {
+          "foreground": "#fff",
+          "background": "#d2ac00",
+          "properties": {
+            "branch_icon": ""
+          },
+          "style": "plain",
+          "template": " {{ .HEAD }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#191919",
+
+          "style": "diamond",
+          "template": "{{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "trailing_diamond": " ",
+          "type": "sysinfo"
+        },
+        {
+          "foreground": "#cbcbcb",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": "📦{{ .Full }} ",
+          "type": "node"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#646464",
+          "style": "plain",
+          "template": ".",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
